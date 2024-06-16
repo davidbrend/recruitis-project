@@ -10,3 +10,6 @@
 /public/assets/
 /assets/vendor/
 /node_modules
+###> phpstan/phpstan ###
+phpstan.neon
+###< phpstan/phpstan ###
