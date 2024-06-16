@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="view-transition" content="same-origin" />
+    <title>{% block title %}Recruitis Project{% endblock %}</title>
+
+    {% block stylesheets %}{% endblock %}
+    {% block javascripts %}
+        {% block importmap %}{{ importmap('app') }}{% endblock %}
+    {% endblock %}
+</head>
+
+<body id="{% block body_id %}{% endblock %}">
+
+{% block header %}
+    {% set _route = app.request.get('_route') %}
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="{{ path('homepage') }}">
+                    Recruitis Project
+                </a>
+            </div>
+        </nav>
+    </header>
+{% endblock %}
+
+<div class="container body-container">
+    {% block body %}
+        <div class="row">
+            <div id="main" class="col-sm-9">
+                {{ include('default/_flash_messages.html.twig') }}
+
+                {% block main %}{% endblock %}
+            </div>
+        </div>
+    {% endblock %}
+</div>
+
+</body>
+</html>
