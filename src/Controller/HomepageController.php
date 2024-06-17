@@ -21,7 +21,7 @@ class HomepageController extends AbstractController
         #[MapQueryParameter] int $page = 1
     ): Response
     {
-        $dto = $this->recruitisFacade->getCachedRecruitisDtomFromAPI();
+        $dto = $this->recruitisFacade->getCachedRecruitisDtomFromAPI($limit, $page);
         $pagination = $this->paginator->paginate($dto?->getJobs() ?? [], $page, $limit);
         return $this->render('default/homepage.html.twig', ['pagination' => $pagination]);
     }
