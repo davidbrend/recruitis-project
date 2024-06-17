@@ -158,16 +158,16 @@
         },
         {
             "name": "davebrend/recruitis-api-project",
-            "version": "v1.0.1",
+            "version": "v1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/davidbrend/recruitis-api-project.git",
-                "reference": "288d0996f4e9d012e578f1ba3dd3ace6b5fe8877"
+                "reference": "268e0499990bb1ff4f1fdb7915fc1c47bebb095d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/davidbrend/recruitis-api-project/zipball/288d0996f4e9d012e578f1ba3dd3ace6b5fe8877",
-                "reference": "288d0996f4e9d012e578f1ba3dd3ace6b5fe8877",
+                "url": "https://api.github.com/repos/davidbrend/recruitis-api-project/zipball/268e0499990bb1ff4f1fdb7915fc1c47bebb095d",
+                "reference": "268e0499990bb1ff4f1fdb7915fc1c47bebb095d",
                 "shasum": ""
             },
             "require": {
@@ -206,9 +206,9 @@
             ],
             "support": {
                 "issues": "https://github.com/davidbrend/recruitis-api-project/issues",
-                "source": "https://github.com/davidbrend/recruitis-api-project/tree/v1.0.1"
+                "source": "https://github.com/davidbrend/recruitis-api-project/tree/v1.1.3"
             },
-            "time": "2024-06-16T21:09:04+00:00"
+            "time": "2024-06-17T16:09:00+00:00"
         },
         {
             "name": "doctrine/cache",
@@ -6150,16 +6150,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.11.4",
+            "version": "1.11.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "9100a76ce8015b9aa7125b9171ae3a76887b6c82"
+                "reference": "490f0ae1c92b082f154681d7849aee776a7c1443"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/9100a76ce8015b9aa7125b9171ae3a76887b6c82",
-                "reference": "9100a76ce8015b9aa7125b9171ae3a76887b6c82",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/490f0ae1c92b082f154681d7849aee776a7c1443",
+                "reference": "490f0ae1c92b082f154681d7849aee776a7c1443",
                 "shasum": ""
             },
             "require": {
@@ -6204,7 +6204,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-06-06T12:19:22+00:00"
+            "time": "2024-06-17T15:10:54+00:00"
         },
         {
             "name": "roave/security-advisories",
