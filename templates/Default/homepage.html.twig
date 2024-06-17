@@ -62,7 +62,7 @@
     </table>
     <div class="mb-3">
         <div class="btn-group" role="group" aria-label="{{ 'Items per Page'|trans({}, 'homepage') }}">
-            {% for limit in [1, 5, 10, 50, 100] %}
+            {% for limit in [1, 5, 10, 50] %}
                 <a href="{{ path('homepage', { page: 1, limit: limit }) }}"
                    class="btn btn-outline-primary {% if pagination.getItemNumberPerPage == limit %}active{% endif %}">
                     {{ limit }}
