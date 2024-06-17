@@ -1,21 +1,35 @@
 {% extends 'base.html.twig' %}
 
+{% block head %}
+    {{ knp_pagination_rel_links(pagination) }}
+{% endblock %}
+
 {% block main %}
+    <div class="count pt-3">
+        {{ 'Total Jobs'|trans({}, 'homepage') }}: {{ pagination.getTotalItemCount }}
+    </div>
+
     <table class="table table-striped">
         <thead>
         <tr>
-            <th scope="col">{{ 'ID' }}</th>
-            <th scope="col">{{ 'Title'|trans({}, 'homepage') }}</th>
-            <th scope="col">{{ 'Description'|trans({}, 'homepage') }}</th>
-            <th scope="col">{{ 'Date Created'|trans({}, 'homepage') }}</th>
-            <th scope="col">{{ 'Last Update'|trans({}, 'homepage') }}</th>
-            <th scope="col">{{ 'Actions'|trans({}, 'homepage') }}</th>
+            <th>{{ knp_pagination_sortable(pagination, 'ID', 'jobId') }}</th>
+            <th{% if pagination.isSorted('title') %} class="sorted"{% endif %}>
+                {{ knp_pagination_sortable(pagination, 'Title'|trans({}, 'homepage'), 'title') }}
+            </th>
+            <th>{{ 'Description'|trans({}, 'homepage') }}</th>
+            <th{% if pagination.isSorted('dateCreated') %} class="sorted"{% endif %}>
+                {{ knp_pagination_sortable(pagination, 'Date Created'|trans({}, 'homepage'), 'dateCreated') }}
+            </th>
+            <th{% if pagination.isSorted('lastUpdate') %} class="sorted"{% endif %}>
+                {{ knp_pagination_sortable(pagination, 'Last Update'|trans({}, 'homepage'), 'lastUpdate') }}
+            </th>
+            <th>{{ 'Actions'|trans({}, 'homepage') }}</th>
         </tr>
         </thead>
         <tbody>
-        {% for job in jobs %}
+        {% for job in pagination %}
             <tr>
-                <th scope="row">{{ job.jobId }}</th>
+                <td>{{ job.jobId }}</td>
                 <td>{{ job.title }}</td>
                 <td class="position-relative">
                     <div>
@@ -32,9 +46,9 @@
                 </td>
                 <td>{{ job.dateCreated|date("d.m.Y") }}</td>
                 <td>{{ job.lastUpdate|date("d.m.Y H:i") }}</td>
-                <td class="align-top pt-4">
+                <td>
                     <div class="d-flex justify-content-center">
-                        <a href="{{ job.editLink }}" class="btn btn-primary btn-sm me-1">{{ 'Edit' }}</a>
+                        <a href="{{ job.editLink }}" class="btn btn-primary btn-sm me-1">Edit</a>
                         <a href="{{ job.publicLink }}" class="btn btn-secondary btn-sm">{{ 'View'|trans({}, 'homepage') }}</a>
                     </div>
                 </td>
@@ -46,4 +60,17 @@
         {% endfor %}
         </tbody>
     </table>
+    <div class="mb-3">
+        <div class="btn-group" role="group" aria-label="{{ 'Items per Page'|trans({}, 'homepage') }}">
+            {% for limit in [1, 5, 10, 50, 100] %}
+                <a href="{{ path('homepage', { page: 1, limit: limit }) }}"
+                   class="btn btn-outline-primary {% if pagination.getItemNumberPerPage == limit %}active{% endif %}">
+                    {{ limit }}
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="navigation d-flex justify-content-center mt-3">
+        {{ knp_pagination_render(pagination) }}
+    </div>
 {% endblock %}

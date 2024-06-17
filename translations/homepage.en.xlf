@@ -4,17 +4,25 @@
     <header>
       <tool tool-id="symfony" tool-name="Symfony"/>
       <prop-group>
-        <prop prop-type="last-modified">Mon, 17 Jun 2024 19:18:12 GMT</prop>
+        <prop prop-type="last-modified">Mon, 17 Jun 2024 21:14:31 GMT</prop>
       </prop-group>
     </header>
     <body>
-      <trans-unit id=".zZzsFp" resname="Title">
-        <source>Title</source>
-        <target>Title</target>
+      <trans-unit id="1_MZEgP" resname="Actions">
+        <source>Actions</source>
+        <target>Actions</target>
       </trans-unit>
       <trans-unit id="NMmVjl0" resname="Description">
         <source>Description</source>
         <target>	Description</target>
+      </trans-unit>
+      <trans-unit id=".zZzsFp" resname="Title">
+        <source>Title</source>
+        <target>Title</target>
+      </trans-unit>
+      <trans-unit id=".SQELHg" resname="No jobs found">
+        <source>No jobs found</source>
+        <target>No jobs found</target>
       </trans-unit>
       <trans-unit id="oz8DIs1" resname="Date Created">
         <source>Date Created</source>
@@ -24,17 +32,17 @@
         <source>Last Update</source>
         <target>Last Update</target>
       </trans-unit>
-      <trans-unit id="1_MZEgP" resname="Actions">
-        <source>Actions</source>
-        <target>Actions</target>
-      </trans-unit>
       <trans-unit id=".EmYZIu" resname="View">
         <source>View</source>
         <target>View</target>
       </trans-unit>
-      <trans-unit id=".SQELHg" resname="No jobs found">
-        <source>No jobs found</source>
-        <target>No jobs found</target>
+      <trans-unit id="yxHt1JP" resname="Total Jobs">
+        <source>Total Jobs</source>
+        <target>Total Jobs</target>
+      </trans-unit>
+      <trans-unit id="UCZrEuB" resname="Items per Page">
+        <source>Items per Page</source>
+        <target>Items Per Page</target>
       </trans-unit>
     </body>
   </file>
