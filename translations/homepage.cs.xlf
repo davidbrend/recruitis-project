@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="cs" target-language="cs" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+      <prop-group>
+        <prop prop-type="last-modified">Mon, 17 Jun 2024 19:18:12 GMT</prop>
+      </prop-group>
+    </header>
+    <body>
+      <trans-unit id=".zZzsFp" resname="Title">
+        <source>Title</source>
+        <target>Nadpis</target>
+      </trans-unit>
+      <trans-unit id="NMmVjl0" resname="Description">
+        <source>Description</source>
+        <target>Popis</target>
+      </trans-unit>
+      <trans-unit id="oz8DIs1" resname="Date Created">
+        <source>Date Created</source>
+        <target>Datum vytvoření</target>
+      </trans-unit>
+      <trans-unit id="2q3YjUT" resname="Last Update">
+        <source>Last Update</source>
+        <target>Poslední aktualizace</target>
+      </trans-unit>
+      <trans-unit id="1_MZEgP" resname="Actions">
+        <source>Actions</source>
+        <target>Akce</target>
+      </trans-unit>
+      <trans-unit id=".EmYZIu" resname="View">
+        <source>View</source>
+        <target>Zobrazit</target>
+      </trans-unit>
+      <trans-unit id=".SQELHg" resname="No jobs found">
+        <source>No jobs found</source>
+        <target>Nebyly nalezeny žádné pracovní pozice</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

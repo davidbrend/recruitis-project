@@ -16,8 +16,8 @@
 
 {% block header %}
     {% set _route = app.request.get('_route') %}
-    <header>
-        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
                 <a class="navbar-brand" href="{{ path('homepage') }}">
                     Recruitis Project
@@ -30,8 +30,8 @@
 <div class="container body-container">
     {% block body %}
         <div class="row">
-            <div id="main" class="col-sm-9">
-                {{ include('default/_flash_messages.html.twig') }}
+            <div id="main" class="col-sm-12">
+                {{ include('_flash_messages.html.twig') }}
 
                 {% block main %}{% endblock %}
             </div>

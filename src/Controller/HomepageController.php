@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Facades\RecruitisFacade;
+use Psr\Cache\InvalidArgumentException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -14,10 +15,15 @@ class HomepageController extends AbstractController
     {
     }
 
+    /**
+     * @throws InvalidArgumentException
+     */
     #[Route('/', 'homepage')]
     public function homepage(): Response
     {
-        $jobs = $this->recruitisFacade->getJobsFromRecruitisAPI();
-        return $this->render('default/homepage.html.twig');
+        $dto = $this->recruitisFacade->getCachedRecruitisDtomFromAPI();
+        return $this->render('default/homepage.html.twig', [
+            'jobs' => $dto?->getJobs()
+        ]);
     }
 }
