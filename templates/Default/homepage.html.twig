@@ -1,2 +1,49 @@
 {% extends 'base.html.twig' %}
 
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">{{ 'ID' }}</th>
+            <th scope="col">{{ 'Title'|trans({}, 'homepage') }}</th>
+            <th scope="col">{{ 'Description'|trans({}, 'homepage') }}</th>
+            <th scope="col">{{ 'Date Created'|trans({}, 'homepage') }}</th>
+            <th scope="col">{{ 'Last Update'|trans({}, 'homepage') }}</th>
+            <th scope="col">{{ 'Actions'|trans({}, 'homepage') }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for job in jobs %}
+            <tr>
+                <th scope="row">{{ job.jobId }}</th>
+                <td>{{ job.title }}</td>
+                <td class="position-relative">
+                    <div>
+                        {{ job.description|slice(0, 100)|raw }}
+                        {% if job.description|length > 100 %}
+                            <a class="btn btn-link p-0 position-absolute end-0 pt-1 translate-middle-y" data-bs-toggle="collapse" href="#collapseDescription{{ job.jobId }}" role="button" aria-expanded="false" aria-controls="collapseDescription{{ job.jobId }}">
+                                <i class="bi bi-chevron-down"></i>
+                            </a>
+                            <div class="collapse" id="collapseDescription{{ job.jobId }}">
+                                {{ job.description|slice(100)|raw }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </td>
+                <td>{{ job.dateCreated|date("d.m.Y") }}</td>
+                <td>{{ job.lastUpdate|date("d.m.Y H:i") }}</td>
+                <td class="align-top pt-4">
+                    <div class="d-flex justify-content-center">
+                        <a href="{{ job.editLink }}" class="btn btn-primary btn-sm me-1">{{ 'Edit' }}</a>
+                        <a href="{{ job.publicLink }}" class="btn btn-secondary btn-sm">{{ 'View'|trans({}, 'homepage') }}</a>
+                    </div>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6" class="text-center">{{ 'No jobs found'|trans({}, 'homepage') }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
