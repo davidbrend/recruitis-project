@@ -14,7 +14,7 @@ use Symfony\Contracts\Cache\ItemInterface;
 class RecruitisFacade
 {
     private const CACHE_RECRUITIS_KEY = 'recruitis_dto';
-    private const CACHE_RECRUITIS_EXPIRE_SECONDS = 3600;
+    private const CACHE_RECRUITIS_EXPIRE_MILLISECONDS = 3600;
 
     public function __construct(
         protected JobFacade $jobFacade,
@@ -29,7 +29,7 @@ class RecruitisFacade
     public function getCachedRecruitisDtomFromAPI(int $limit, int $page): ?RecruitisApiDto
     {
         return $this->cache->get($this->generateCacheKey($limit, $page), function (ItemInterface $item) use ($limit, $page) {
-            $item->expiresAfter(self::CACHE_RECRUITIS_EXPIRE_SECONDS);
+            $item->expiresAfter(self::CACHE_RECRUITIS_EXPIRE_MILLISECONDS);
             try {
                 $query = new Query(); // Query params are defined in recruitis API documentation
                 $query->setLimit($limit)
