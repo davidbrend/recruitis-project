@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Facades\RecruitisFacade;
 use Knp\Component\Pager\PaginatorInterface;
+use Psr\Cache\InvalidArgumentException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Attribute\MapQueryParameter;
@@ -21,8 +22,14 @@ class HomepageController extends AbstractController
         #[MapQueryParameter] int $page = 1
     ): Response
     {
-        $dto = $this->recruitisFacade->getCachedRecruitisDtomFromAPI($limit, $page);
-        $pagination = $this->paginator->paginate($dto?->getJobs() ?? [], $page, $limit);
-        return $this->render('default/homepage.html.twig', ['pagination' => $pagination]);
+        $recruitisApiDto = $this->recruitisFacade->getCachedRecruitisDtomFromAPI($limit, $page);
+
+        $totalEntries = $recruitisApiDto?->getMeta()->getEntriesTotal() ?? 0;
+        $pagination = $this->paginator->paginate(range(1, $totalEntries), $page, $limit);
+
+        $pagination->setItems($recruitisApiDto?->getJobs() ?? []);
+        $pagination->setTotalItemCount($recruitisApiDto?->getMeta()->getEntriesTotal() ?? 0);
+
+        return $this->render('default/homepage.html.twig', ['pagination' => $pagination, 'meta' => $recruitisApiDto?->getMeta()]);
     }
 }

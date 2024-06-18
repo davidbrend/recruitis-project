@@ -158,16 +158,16 @@
         },
         {
             "name": "davebrend/recruitis-api-project",
-            "version": "v1.4.0",
+            "version": "v1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/davidbrend/recruitis-api-project.git",
-                "reference": "5506cfe4da305a39b32810372136610e8338bc59"
+                "reference": "0a081b75ba5dcb8a331997545ab5380184a21f1b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/davidbrend/recruitis-api-project/zipball/5506cfe4da305a39b32810372136610e8338bc59",
-                "reference": "5506cfe4da305a39b32810372136610e8338bc59",
+                "url": "https://api.github.com/repos/davidbrend/recruitis-api-project/zipball/0a081b75ba5dcb8a331997545ab5380184a21f1b",
+                "reference": "0a081b75ba5dcb8a331997545ab5380184a21f1b",
                 "shasum": ""
             },
             "require": {
@@ -206,9 +206,9 @@
             ],
             "support": {
                 "issues": "https://github.com/davidbrend/recruitis-api-project/issues",
-                "source": "https://github.com/davidbrend/recruitis-api-project/tree/v1.4.0"
+                "source": "https://github.com/davidbrend/recruitis-api-project/tree/v1.4.1"
             },
-            "time": "2024-06-17T22:14:49+00:00"
+            "time": "2024-06-18T19:01:29+00:00"
         },
         {
             "name": "doctrine/cache",
@@ -6745,12 +6745,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "e3db49d1d5d6156b536839309df8cf047dda41f2"
+                "reference": "a36c08c63614a0da558615424f8b37b3216416b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/e3db49d1d5d6156b536839309df8cf047dda41f2",
-                "reference": "e3db49d1d5d6156b536839309df8cf047dda41f2",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/a36c08c63614a0da558615424f8b37b3216416b6",
+                "reference": "a36c08c63614a0da558615424f8b37b3216416b6",
                 "shasum": ""
             },
             "conflict": {
@@ -6976,7 +6976,7 @@
                 "gos/web-socket-bundle": "<1.10.4|>=2,<2.6.1|>=3,<3.3",
                 "gree/jose": "<2.2.1",
                 "gregwar/rst": "<1.0.3",
-                "grumpydictator/firefly-iii": "<6.1.7",
+                "grumpydictator/firefly-iii": "<6.1.17",
                 "gugoan/economizzer": "<=0.9.0.0-beta1",
                 "guzzlehttp/guzzle": "<6.5.8|>=7,<7.4.5",
                 "guzzlehttp/psr7": "<1.9.1|>=2,<2.4.5",
@@ -7540,7 +7540,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-06-17T22:04:28+00:00"
+            "time": "2024-06-17T23:04:35+00:00"
         },
         {
             "name": "symfony/maker-bundle",

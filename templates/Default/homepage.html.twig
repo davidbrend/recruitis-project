@@ -6,7 +6,8 @@
 
 {% block main %}
     <div class="count pt-3">
-        {{ 'Total Jobs'|trans({}, 'homepage') }}: {{ pagination.getTotalItemCount }}
+        <p>{{ 'Showing'|trans({}, 'homepage') }} {{ meta.entriesFrom ?? 0 }} {{ 'to'|trans({}, 'homepage') }} {{ meta.entriesTo ?? 0 }}
+            {{ 'of'|trans({}, 'homepage') }} {{ meta.entriesTotal ?? 0 }} {{ 'entries'|trans({}, 'homepage') }}.</p>
     </div>
 
     <table class="table table-striped">
