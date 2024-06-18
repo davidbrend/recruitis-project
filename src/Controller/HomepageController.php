@@ -15,7 +15,7 @@ class HomepageController extends AbstractController
     {
     }
 
-    #[Route('/', 'homepage')]
+    #[Route('/', name: 'homepage')]
     public function homepage(
         #[MapQueryParameter] int $limit = 10,
         #[MapQueryParameter] int $page = 1
@@ -23,12 +23,13 @@ class HomepageController extends AbstractController
     {
         $recruitisApiDto = $this->recruitisFacade->getCachedRecruitisDtomFromAPI($limit, $page);
 
-        $totalEntries = $recruitisApiDto?->getMeta()->getEntriesTotal() ?? 0;
-        $pagination = $this->paginator->paginate(range(1, $totalEntries), $page, $limit);
-
-        $pagination->setItems($recruitisApiDto?->getJobs() ?? []);
+        $pagination = $this->paginator->paginate([], $page, $limit);
         $pagination->setTotalItemCount($recruitisApiDto?->getMeta()->getEntriesTotal() ?? 0);
+        $pagination->setItems($recruitisApiDto?->getJobs() ?? []); // is required to set items like this because of compatibility with API results
 
-        return $this->render('default/homepage.html.twig', ['pagination' => $pagination, 'meta' => $recruitisApiDto?->getMeta()]);
+        return $this->render('default/homepage.html.twig', [
+            'pagination' => $pagination,
+            'meta' => $recruitisApiDto?->getMeta(),
+        ]);
     }
 }
