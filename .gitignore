@@ -13,3 +13,8 @@
 ###> phpstan/phpstan ###
 phpstan.neon
 ###< phpstan/phpstan ###
+
+.env*
+.flaskenv*
+!.env.project
+!.env.vault
