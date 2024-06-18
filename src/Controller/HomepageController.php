@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Facades\RecruitisFacade;
 use Knp\Component\Pager\PaginatorInterface;
-use Psr\Cache\InvalidArgumentException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Attribute\MapQueryParameter;
