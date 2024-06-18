@@ -23,7 +23,23 @@ The primary function of the project is a connection to Recruitis API through the
     cd recruitis-project
     ```
 
-2. **Install dependencies:**
+2. **Set up environment variables:**
+
+    - Install dotenv-vault via Homebrew:
+
+        ```bash
+        brew install dotenv-org/brew/dotenv-vault
+        ```
+
+    OR
+
+    - Pull your environment variables securely:
+
+        ```bash
+        npx dotenv-vault@latest pull
+        ```
+
+3. **Install dependencies:**
 
     Composer
     ```bash
@@ -34,20 +50,6 @@ The primary function of the project is a connection to Recruitis API through the
     ```bash
     npm install
     ```
-
-3. **Set up environment variables:**
-
-    - Install dotenv-vault via Homebrew:
-
-        ```bash
-        brew install dotenv-org/brew/dotenv-vault
-        ```
-
-    - Pull your environment variables securely:
-
-        ```bash
-        npx dotenv-vault@latest pull
-        ```
 
 4. **Start the server:**
 
